@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Predict Salary Analysis</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="Age" placeholder="Age" required="required" /><br>
+        <input type="text" name="DistanceFromHome" placeholder="DistanceFromHome" required="required" /><br>
+        <label for="education">Choose education level</label>
+		<select id="education" name="education">
+    <option value="1">Below College</option>
+    <option value="2">College</option>
+    <option value="3">Bachelor</option>
+    <option value="4">Master</option>
+    <option value="5">Doctor</option>
+      </select><br>
+        <label for="es">envirmental satisfaction:</label>
+  <select id="es" name="es">
+    <option value="1">Low</option>
+    <option value="2">Medium</option>
+    <option value="3">High</option>
+    <option value="4">veryhigh</option>
+  </select><br>
+        <label for="JI">Job Involment:</label>
+  <select id="JI" name="JI">
+    <option value="1">Low</option>
+    <option value="2">Medium</option>
+    <option value="3">High</option>
+    <option value="4">Very High</option>
+  </select><br>
+        <label for="JS">Job satisfaction:</label>
+  <select id="JS" name="JS">
+    <option value="1">Low</option>
+    <option value="2">Medium</option>
+    <option value="3">High</option>
+    <option value="4">Very High</option>
+  </select><br>
+        <input type="text" name="MI" placeholder="Monthly Income" required="required" /><br>
+        <input type="text" name="CW" placeholder="Number of companies worked" required="required" /><br>
+        
+        <input type="text" name="PH" placeholder="percentage of salary hike without %" required="required" /><br>
+        <label for="PR">Performace rating:</label>
+  <select id="PR" name="PR">
+    <option value="1">low</option>
+    <option value="2">good</option>
+    <option value="3">excellent</option>
+    <option value="4">outstanding</option>
+  </select><br>
+        
+<label for="SL">stock option level:</label>
+  <select id="SL" name="SL">
+    <option value="0">No stocks</option>
+    <option value="1">less stocks</option>
+    <option value="2">moderate stocks</option>
+    <option value="3">lot of stocks</option>
+  </select><br>
+        <label for="Travel">Travel history:</label>
+  <select id="TRAVEL" name="TRAVEL">
+    <option value="1">non travel</option>
+    <option value="3">travel rarely</option>
+    <option value="2">travel frequently</option>
+  </select><br>
+        
+       <!-- <input type="text" name="WY" placeholder="Total working experience" required="required" /><br>
+        <input type="text" name="TRL" placeholder="Number of trainings employee went through last year" required="required" /><br>
+        <input type="text" name="WE" placeholder="toal working year in this company" required="required" /><br>
+
+        <input type="text" name="YCR" placeholder="years in current role" required="required" /><br>
+        <input type="text" name="YSL" placeholder="years since last promotion" required="required" /><br>
+        <input type="text" name="YWC" placeholder="years with current manager" required="required" /><br>
+        -->
+
+        
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button><br>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+
+</body>
+</html>
