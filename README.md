@@ -5,4 +5,4 @@ click on the link to view the web app:
 
 https://ml-attrition-prediction.herokuapp.com/
 
-# note: this project has been mainly done to understand the ml pipelines, some of the the parameters in model building are avoided purposefully to save time.
+# note: this project has been mainly done to understand the ml pipelines, Model building and feature engineering part needs more work.
